@@ -1,0 +1,17 @@
+com\axonactive\Service\dao\MovieDao.class
+com\axonactive\entity\Movie.class
+com\axonactive\entity\Director.class
+com\axonactive\rest\request\MovieRequest.class
+com\axonactive\entity\Actor.class
+com\axonactive\entity\Reviewer.class
+com\axonactive\entity\ActorAward.class
+com\axonactive\entity\Rating.class
+com\axonactive\Service\MovieService.class
+com\axonactive\rest\MovieResource.class
+com\axonactive\rest\RestConfiguration.class
+com\axonactive\entity\Award.class
+com\axonactive\entity\ProcductionCompany.class
+com\axonactive\entity\MovieCast.class
+com\axonactive\entity\MovieAward.class
+com\axonactive\entity\MovieGenres.class
+com\axonactive\entity\Genres.class
