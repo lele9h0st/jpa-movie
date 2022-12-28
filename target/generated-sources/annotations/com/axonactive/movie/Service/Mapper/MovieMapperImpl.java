@@ -2,9 +2,6 @@ package com.axonactive.movie.Service.Mapper;
 
 import com.axonactive.movie.Service.Dto.MovieDTO;
 import com.axonactive.movie.entity.Movie;
-import com.axonactive.movie.entity.MovieAward;
-import com.axonactive.movie.entity.MovieCast;
-import com.axonactive.movie.entity.MovieGenres;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.processing.Generated;
@@ -12,8 +9,8 @@ import javax.enterprise.context.ApplicationScoped;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-12-14T18:26:48+0700",
-    comments = "version: 1.5.2.Final, compiler: javac, environment: Java 11.0.17 (Eclipse Adoptium)"
+    date = "2022-12-28T22:43:33+0700",
+    comments = "version: 1.5.2.Final, compiler: javac, environment: Java 11.0.17 (Amazon.com Inc.)"
 )
 @ApplicationScoped
 public class MovieMapperImpl implements MovieMapper {
@@ -31,18 +28,6 @@ public class MovieMapperImpl implements MovieMapper {
         movieDTO.setLength( movie.getLength() );
         movieDTO.setLanguage( movie.getLanguage() );
         movieDTO.setProductionCompany( movie.getProductionCompany() );
-        List<MovieAward> list = movie.getMovieAwards();
-        if ( list != null ) {
-            movieDTO.setMovieAwards( new ArrayList<MovieAward>( list ) );
-        }
-        List<MovieCast> list1 = movie.getMovieCasts();
-        if ( list1 != null ) {
-            movieDTO.setMovieCasts( new ArrayList<MovieCast>( list1 ) );
-        }
-        List<MovieGenres> list2 = movie.getGenres();
-        if ( list2 != null ) {
-            movieDTO.setGenres( new ArrayList<MovieGenres>( list2 ) );
-        }
 
         return movieDTO;
     }
@@ -74,18 +59,6 @@ public class MovieMapperImpl implements MovieMapper {
         movie.setLength( movieDTO.getLength() );
         movie.setLanguage( movieDTO.getLanguage() );
         movie.setProductionCompany( movieDTO.getProductionCompany() );
-        List<MovieAward> list = movieDTO.getMovieAwards();
-        if ( list != null ) {
-            movie.setMovieAwards( new ArrayList<MovieAward>( list ) );
-        }
-        List<MovieCast> list1 = movieDTO.getMovieCasts();
-        if ( list1 != null ) {
-            movie.setMovieCasts( new ArrayList<MovieCast>( list1 ) );
-        }
-        List<MovieGenres> list2 = movieDTO.getGenres();
-        if ( list2 != null ) {
-            movie.setGenres( new ArrayList<MovieGenres>( list2 ) );
-        }
 
         return movie;
     }

@@ -26,22 +26,17 @@ public class Movie {
     @OneToOne
     @JoinColumn(name = "production_company_id")
     private ProductionCompany productionCompany;
-    @OneToOne
-    @JoinColumn(name = "director_id")
-    private Director director;
-    @OneToMany(mappedBy = "movie", cascade = CascadeType.ALL)
-    @LazyCollection(LazyCollectionOption.FALSE)
+//    @OneToMany(mappedBy = "movie", cascade = CascadeType.ALL)
+//    @LazyCollection(LazyCollectionOption.FALSE)
 //    @JsonManagedReference
-    private List<MovieAward> movieAwards;
-    @OneToMany(mappedBy = "movie", cascade = CascadeType.ALL)
-    @JsonManagedReference
-    @LazyCollection(LazyCollectionOption.FALSE)
-    private List<MovieCast> movieCasts;
-    @OneToMany(mappedBy = "movie", cascade = CascadeType.ALL)
-//    @JsonManagedReference
-    @LazyCollection(LazyCollectionOption.FALSE)
-    private List<MovieGenres> genres;
+//    private List<MovieAward> movieAwards;
 //    @OneToMany(mappedBy = "movie", cascade = CascadeType.ALL)
 //    @JsonManagedReference
-//    private List<Rating> ratings;
+//    @LazyCollection(LazyCollectionOption.FALSE)
+//    private List<MovieCast> movieCasts;
+//    @OneToMany(mappedBy = "movie", cascade = CascadeType.ALL)
+//    @JsonManagedReference
+//    @LazyCollection(LazyCollectionOption.FALSE)
+//    private List<MovieGenres> genres;
+
 }

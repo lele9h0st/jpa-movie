@@ -29,9 +29,9 @@ public class MovieDao {
         movie.setTitle(movieRequest.getTitle());
         movie.setLanguage(movieRequest.getLanguage());
         movie.setLength(movieRequest.getLength());
-        movie.setGenres(movieRequest.getGenres());
-        movie.setMovieAwards(movieRequest.getMovieAwards());
-        movie.setMovieCasts(movieRequest.getMovieCasts());
+//        movie.setGenres(movieRequest.getGenres());
+//        movie.setMovieAwards(movieRequest.getMovieAwards());
+//        movie.setMovieCasts(movieRequest.getMovieCasts());
         movie.setYear(movieRequest.getYear());
         movie.setProductionCompany(movieRequest.getProductionCompany());
         movie = this.em.merge(movie);
@@ -55,9 +55,9 @@ public class MovieDao {
             movie.setTitle(movieRequest.getTitle());
             movie.setLanguage(movieRequest.getLanguage());
             movie.setLength(movieRequest.getLength());
-            movie.setGenres(movieRequest.getGenres());
-            movie.setMovieAwards(movieRequest.getMovieAwards());
-            movie.setMovieCasts(movieRequest.getMovieCasts());
+//            movie.setGenres(movieRequest.getGenres());
+//            movie.setMovieAwards(movieRequest.getMovieAwards());
+//            movie.setMovieCasts(movieRequest.getMovieCasts());
             movie.setYear(movieRequest.getYear());
             movie.setProductionCompany(movieRequest.getProductionCompany());
             movie = this.em.merge(movie);

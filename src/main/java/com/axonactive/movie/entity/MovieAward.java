@@ -19,7 +19,6 @@ public class MovieAward {
     private Movie movie;
     @JoinColumn(name = "award_id")
     @ManyToOne
-
     private Award award;
     private int year;
 

@@ -16,6 +16,7 @@ com\axonactive\movie\entity\ProductionCompany.class
 com\axonactive\movie\entity\Rating.class
 com\axonactive\movie\Service\ActorService.class
 com\axonactive\movie\rest\request\MovieCastRequest.class
+com\axonactive\movie\entity\MovieDirector.class
 com\axonactive\movie\entity\Movie.class
 com\axonactive\movie\entity\MovieAward.class
 com\axonactive\movie\Service\dao\ActorDao.class

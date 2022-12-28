@@ -30,7 +30,7 @@ public class ActorDao {
             actor.setLastName(actorRequest.getLastName());
             actor.setDob(actorRequest.getDob());
             actor.setGender(actorRequest.getGender());
-            actor.setAwards(actorRequest.getAwards());
+//            actor.setAwards(actorRequest.getAwards());
             actor = this.em.merge(actor);
             return actor;
         }else{
@@ -43,7 +43,7 @@ public class ActorDao {
         actor.setLastName(actorRequest.getLastName());
         actor.setDob(actorRequest.getDob());
         actor.setGender(actorRequest.getGender());
-        actor.setAwards(actorRequest.getAwards());
+//        actor.setAwards(actorRequest.getAwards());
         actor = this.em.merge(actor);
         return actor;
     }

@@ -25,9 +25,9 @@ public class Actor {
     private Integer gender;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date dob;
-    @OneToMany(mappedBy = "actor", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-    @JsonManagedReference(value = "actor-award")
-    private List<ActorAward> awards;
+//    @OneToMany(mappedBy = "actor", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+//    @JsonManagedReference(value = "actor-award")
+//    private List<ActorAward> awards;
 
 }
 
