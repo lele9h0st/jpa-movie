@@ -6,6 +6,8 @@ import com.axonactive.movie.Service.Dto.MovieDTO;
 import com.axonactive.movie.rest.request.ActorRequest;
 import com.axonactive.movie.rest.request.MovieRequest;
 
+import javax.annotation.security.PermitAll;
+import javax.annotation.security.RolesAllowed;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -15,10 +17,11 @@ import javax.ws.rs.core.Response;
 @Stateless
 @Path(ActorResource.PATH)
 public class ActorResource {
-    public static final String PATH = "actors";
+    public static final String PATH = "/actors";
     @Inject
     private ActorService actorService;
     @GET
+    @PermitAll
     @Produces({MediaType.APPLICATION_JSON})
     public Response findAllActor(){
        return Response.status(200).entity(actorService.getAll()).build();

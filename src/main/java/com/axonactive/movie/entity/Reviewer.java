@@ -16,6 +16,11 @@ public class Reviewer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
+    @Column(unique = true)
+    private String username;
+    private String password;
+    private String phone;
+    private String email;
     @OneToMany(mappedBy = "reviewer",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     private List<Rating> ratings;
 }

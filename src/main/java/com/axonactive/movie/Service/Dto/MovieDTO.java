@@ -18,7 +18,4 @@ public class MovieDTO {
     private Integer length;
     private String language;
     private ProductionCompany productionCompany;
-    private List<MovieAward> movieAwards;
-    private List<MovieCast> movieCasts;
-    private List<MovieGenres> genres;
 }

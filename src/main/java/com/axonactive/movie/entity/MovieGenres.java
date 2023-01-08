@@ -1,5 +1,6 @@
 package com.axonactive.movie.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,6 +17,7 @@ public class MovieGenres {
     private Integer id;
     @ManyToOne
     @JoinColumn(name = "movie_id")
+    @JsonBackReference
     private Movie movie;
     @ManyToOne
     @JoinColumn(name = "genres_id")

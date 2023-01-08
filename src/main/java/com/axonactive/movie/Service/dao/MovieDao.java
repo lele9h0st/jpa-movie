@@ -15,15 +15,25 @@ public class MovieDao {
     EntityManager em;
 
     public List<Movie> findAll() {
-        Query getAllMovie = em.createQuery("SELECT m FROM Movie m", Movie.class);
+        Query getAllMovie = em.createNamedQuery(Movie.GET_MOVIE_LIST);
         return getAllMovie.getResultList();
     }
-
+    public List<Movie> getListMovieByActorId(Integer actorId){
+        Query getByActorId=em.createNamedQuery(Movie.GET_MOVIE_LIST_BY_ACTOR_ID).setParameter("id", actorId);
+        return getByActorId.getResultList();
+    }
+    public List<Movie> getListMovieByGenres(String genres){
+        Query getByActorId=em.createNamedQuery(Movie.GET_MOVIE_LIST_BY_GENRES).setParameter("title", genres);
+        return getByActorId.getResultList();
+    }
     public Movie findById(Integer id) {
-        Query findMovieById = em.createQuery("SELECT m FROM Movie m WHERE m.id=:id", Movie.class).setParameter("id", id);
+        Query findMovieById = em.createNamedQuery(Movie.GET_MOVIE_BY_ID).setParameter("id", id);
         return (Movie) findMovieById.getSingleResult();
     }
-
+    public List<Movie> getMoviesByRangeYear(Integer startYear,Integer endYear){
+        Query findByRangeYear=em.createNamedQuery(Movie.GET_MOVIE_BY_RANGE_YEAR).setParameter("startYear",startYear).setParameter("endYear",endYear);
+        return findByRangeYear.getResultList();
+    }
     public Movie saveMovie(MovieRequest movieRequest) {
         Movie movie = new Movie();
         movie.setTitle(movieRequest.getTitle());

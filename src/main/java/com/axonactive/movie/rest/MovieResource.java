@@ -7,6 +7,7 @@ import com.axonactive.movie.rest.request.MovieRequest;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.validation.Valid;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -14,7 +15,7 @@ import javax.ws.rs.core.Response;
 @Stateless
 @Path(MovieResource.PATH)
 public class MovieResource {
-    public static final String PATH = "movies";
+    public static final String PATH = "/movies";
     @Inject
     private MovieService movieService;
 
@@ -24,6 +25,25 @@ public class MovieResource {
         return Response.status(200).entity(movieService.getAll()).build();
     }
 
+    @GET
+    @Path("/actor/{actorId}")
+    @Produces({MediaType.APPLICATION_JSON})
+    public Response getMoviesByActorId(@PathParam("actorId")Integer actorId){
+        return Response.status(200).entity(movieService.getMoviesByActorId(actorId)).build();
+    }
+    @GET
+    @Path("/genres/{genres}")
+    @Produces({MediaType.APPLICATION_JSON})
+    public Response getMoviesByGenres(@PathParam("genres")String genres){
+        return Response.status(200).entity(movieService.getListMovieByGenres(genres)).build();
+    }
+
+    @GET
+    @Path("/years")
+    @Produces({MediaType.APPLICATION_JSON})
+    public Response getMoviesByRangeYear(@QueryParam("startYear") @Valid Integer startYear, @QueryParam("endYear") @Valid Integer endYear){
+        return Response.status(200).entity(movieService.getMoviesByRangeYear(startYear, endYear)).build();
+    }
     @POST
     @Consumes({MediaType.APPLICATION_JSON})
     @Produces({MediaType.APPLICATION_JSON})
